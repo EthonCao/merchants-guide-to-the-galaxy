@@ -3,6 +3,8 @@ package com.galaxy.core;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.galaxy.constant.RomanNumeral;
+
 /**
  * The Dictionary class is a singleton class, This class maintains the assigned
  * values in the Assigned value map and the Roman value in the Roman Numerials

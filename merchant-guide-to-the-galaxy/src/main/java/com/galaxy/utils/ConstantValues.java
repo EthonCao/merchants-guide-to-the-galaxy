@@ -1,4 +1,4 @@
-package utils;
+package com.galaxy.utils;
 
 /**
  * This class has the constant values

@@ -1,4 +1,4 @@
-package com.galaxy.core;
+package com.galaxy.constant;
 
 /**
  * This RomanNumeral enum holds the roman values
