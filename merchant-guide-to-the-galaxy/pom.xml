@@ -7,6 +7,8 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
+  <description>TW interview question: Merchant's Guide to the Galaxy</description>
+
   <name>merchant-guide-to-the-galaxy-solution1</name>
   <url>http://maven.apache.org</url>
 
@@ -24,5 +26,4 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-  <description>TW interview question: Merchant's Guide to the Galaxy</description>
 </project>
