@@ -11,47 +11,40 @@ import com.galaxy.constant.RomanNumeral;
  * Map.
  *
  */
-public class Dictionary
-{
-    public Map<String, RomanNumeral> itsRomanNumerialsMap;
+public class Dictionary {
+	public Map<String, RomanNumeral> itsRomanNumerialsMap;
 
-    public Map<String, Object> itsAssignedValueMap;
-    
-    private static Dictionary itsDictionary = new Dictionary();
-    
-    public static Dictionary getInstance()
-    {
-    	return itsDictionary;
-    }
+	public Map<String, Object> itsAssignedValueMap;
 
-    private Dictionary()
-    {
-        itsRomanNumerialsMap = new HashMap<String, RomanNumeral>();
-        itsAssignedValueMap = new HashMap<String, Object>();
-        loadRomanNumerials();
-    }
+	private static Dictionary itsDictionary = new Dictionary();
 
-    private void loadRomanNumerials()
-    {
-        RomanNumeral[] romanNumerials = RomanNumeral.values();
-        for (RomanNumeral romanNumerial : romanNumerials)
-        {
-            itsRomanNumerialsMap.put(romanNumerial.name(), romanNumerial);
-        }
-    }
+	public static Dictionary getInstance() {
+		return itsDictionary;
+	}
 
-    public void addAssignedValue(String theKey, Object theValue)
-    {
-        itsAssignedValueMap.put(theKey, theValue);
-    }
+	private Dictionary() {
+		itsRomanNumerialsMap = new HashMap<String, RomanNumeral>();
+		itsAssignedValueMap = new HashMap<String, Object>();
+		loadRomanNumerials();
+	}
 
-    public Object getAssignedValue(String theKey)
-    {
-        return itsAssignedValueMap.get(theKey);
-    }
+	private void loadRomanNumerials() {
+		RomanNumeral[] romanNumerials = RomanNumeral.values();
+		for (RomanNumeral romanNumerial : romanNumerials) {
+			itsRomanNumerialsMap.put(romanNumerial.name(), romanNumerial);
+		}
+	}
 
-    public RomanNumeral getRomanNumerialValue(String theKey)
-    {
-        return itsRomanNumerialsMap.get(theKey);
-    }
+	public void addAssignedValue(String theKey, Object theValue) {
+		itsAssignedValueMap.put(theKey, theValue);
+	}
+
+	public Object getAssignedValue(String theKey) {
+		return itsAssignedValueMap.get(theKey);
+	}
+
+	public RomanNumeral getRomanNumerialValue(String theKey) {
+		return itsRomanNumerialsMap.get(theKey);
+	}
+
 }
