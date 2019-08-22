@@ -1,4 +1,4 @@
-package com.galaxy.core;
+package com.galaxy.service;
 
 import java.util.List;
 

@@ -1,6 +1,7 @@
-package com.galaxy.core;
+package com.galaxy.service;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ import com.galaxy.utils.StringUtils;
  * then the value get saved in AssignedValueMap of the {@link Dictionary}.
  */
 public class ParserManager {
-	private ValueConverter itsConvertor;
+	private Converter itsConvertor;
 
 	private Dictionary itsDictionary;
 
@@ -29,7 +30,7 @@ public class ParserManager {
 	}
 
 	private ParserManager() {
-		itsConvertor = new ValueConverter();
+		itsConvertor = new Converter();
 
 		itsDictionary = Dictionary.getInstance();
 	}
@@ -41,8 +42,9 @@ public class ParserManager {
 	 */
 	public void parseInput() throws Exception {
 		String currentLine;
-		try (BufferedReader br = new BufferedReader(
-				new FileReader("SampleInput.txt"))) {
+		try {
+		    File file = new File(ParserManager.class.getClassLoader().getResource("SampleInput.txt").getFile()); 
+		    BufferedReader br = new BufferedReader(new FileReader(file));
 			while ((currentLine = br.readLine()) != null) {
 				// Get the User Input
 				if (!StringUtils.isEmpty(currentLine)

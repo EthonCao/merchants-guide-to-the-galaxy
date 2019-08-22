@@ -5,6 +5,7 @@ package com.galaxy.constant;
  *
  */
 public class ConstantValues {
+	
 	public static final String QUESTION_MARK = " ?";
 
 	public static final String IS_VALUE = " is ";
