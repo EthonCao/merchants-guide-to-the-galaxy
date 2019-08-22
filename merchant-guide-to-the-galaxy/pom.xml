@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.cao.inrerview</groupId>
-  <artifactId>merchant-guide-to-the-galaxy</artifactId>
+  <artifactId>merchant-guide-to-the-galaxy-solution1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>merchant-guide-to-the-galaxy</name>
+  <name>merchant-guide-to-the-galaxy-solution1</name>
   <url>http://maven.apache.org</url>
 
   <properties>
