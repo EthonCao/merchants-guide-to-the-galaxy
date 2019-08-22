@@ -5,10 +5,7 @@ package com.galaxy.utils;
  */
 public class StringUtils {
 
-	public static boolean isNotNullOrEmpty(String theValue) {
-		if (!theValue.isEmpty() && theValue != null) {
-			return true;
-		}
-		return false;
+	public static boolean isEmpty(Object str) {
+		return (str == null || "".equals(str));
 	}
 }

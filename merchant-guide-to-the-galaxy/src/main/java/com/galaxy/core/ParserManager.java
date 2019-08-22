@@ -5,8 +5,8 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.galaxy.constant.ConstantValues;
 import com.galaxy.constant.RomanNumeral;
-import com.galaxy.utils.ConstantValues;
 import com.galaxy.utils.StringUtils;
 
 /**
@@ -45,7 +45,7 @@ public class ParserManager {
 				new FileReader("SampleInput.txt"))) {
 			while ((currentLine = br.readLine()) != null) {
 				// Get the User Input
-				if (StringUtils.isNotNullOrEmpty(currentLine)
+				if (!StringUtils.isEmpty(currentLine)
 						&& currentLine.startsWith(ConstantValues.HOW)) {
 					parseQuestions(currentLine);
 				} else {
@@ -83,11 +83,11 @@ public class ParserManager {
 	 * 
 	 */
 	private void parseAssertion(String theInput) {
-		if (StringUtils.isNotNullOrEmpty(theInput)) {
+		if (!StringUtils.isEmpty(theInput)) {
 			String[] aInputSplits = theInput.split(ConstantValues.IS_VALUE);
 
 			if (aInputSplits.length > 1
-					&& StringUtils.isNotNullOrEmpty(aInputSplits[1])) {
+					&& !StringUtils.isEmpty(aInputSplits[1])) {
 				if (aInputSplits[1].endsWith(ConstantValues.CREDITS)) {
 					double aFinalCredits = 0;
 					String[] split = aInputSplits[0]
