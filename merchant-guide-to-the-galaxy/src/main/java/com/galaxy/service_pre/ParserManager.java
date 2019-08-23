@@ -1,4 +1,4 @@
-package com.galaxy.service.pre;
+package com.galaxy.service_pre;
 
 import java.io.BufferedReader;
 import java.io.File;

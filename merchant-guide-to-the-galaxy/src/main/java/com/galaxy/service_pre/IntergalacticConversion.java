@@ -1,4 +1,4 @@
-package com.galaxy.service.pre;
+package com.galaxy.service_pre;
 
 import java.util.ArrayList;
 import java.util.List;
