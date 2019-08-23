@@ -1,4 +1,6 @@
-package com.galaxy.service;
+package com.galaxy.service.impl;
+
+import com.galaxy.service.AbstractDataConverter;
 
 /**
  * 扩展待用
