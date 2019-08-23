@@ -1,4 +1,4 @@
-package com.galaxy.constant;
+package com.galaxy.pre.constant;
 
 /**
  * Save to number mapper

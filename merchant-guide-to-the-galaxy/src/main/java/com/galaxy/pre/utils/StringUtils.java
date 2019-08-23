@@ -1,4 +1,4 @@
-package com.galaxy.utils;
+package com.galaxy.pre.utils;
 
 /**
  * StringUtils method validate String related logic

@@ -1,4 +1,4 @@
-package com.galaxy.service_pre;
+package com.galaxy.pre.service;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,9 +6,9 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.galaxy.constant.ConstantValues;
-import com.galaxy.constant.RomanNumeral;
-import com.galaxy.utils.StringUtils;
+import com.galaxy.pre.constant.ConstantValues;
+import com.galaxy.pre.constant.RomanNumeral;
+import com.galaxy.pre.utils.StringUtils;
 
 /**
  * This class is a singleton class. Parser Manager Manages parsing Inputs. This

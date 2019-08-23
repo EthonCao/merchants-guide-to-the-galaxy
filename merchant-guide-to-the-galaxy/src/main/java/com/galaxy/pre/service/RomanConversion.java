@@ -1,8 +1,8 @@
-package com.galaxy.service_pre;
+package com.galaxy.pre.service;
 
 import java.util.List;
 
-import com.galaxy.constant.RomanNumeral;
+import com.galaxy.pre.constant.RomanNumeral;
 
 /**
  * This class converts the Roman Values to Arabic Values. This class gets the

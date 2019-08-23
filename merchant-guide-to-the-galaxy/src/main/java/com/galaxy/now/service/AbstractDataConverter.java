@@ -1,4 +1,4 @@
-package com.galaxy.service;
+package com.galaxy.now.service;
 
 /**
  * 数据处理器

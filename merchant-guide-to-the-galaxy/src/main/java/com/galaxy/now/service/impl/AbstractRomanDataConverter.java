@@ -1,9 +1,9 @@
-package com.galaxy.service.impl;
+package com.galaxy.now.service.impl;
 
 import java.util.List;
 
-import com.galaxy.constant.RomanNumeral;
-import com.galaxy.service_pre.Dictionary;
+import com.galaxy.pre.constant.RomanNumeral;
+import com.galaxy.pre.service.Dictionary;
 
 public abstract class AbstractRomanDataConverter<T, R> extends AbstractDataManager<List<Object>, Double> {
 	 

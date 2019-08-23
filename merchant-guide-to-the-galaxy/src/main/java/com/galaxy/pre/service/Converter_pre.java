@@ -1,4 +1,4 @@
-package com.galaxy.service_pre;
+package com.galaxy.pre.service;
 
 import java.util.List;
 

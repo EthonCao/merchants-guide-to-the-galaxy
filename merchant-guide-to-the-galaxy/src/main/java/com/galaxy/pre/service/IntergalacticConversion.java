@@ -1,10 +1,10 @@
-package com.galaxy.service_pre;
+package com.galaxy.pre.service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import com.galaxy.constant.ConstantValues;
+import com.galaxy.pre.constant.ConstantValues;
 
 /**
  * This Class Converts the Galactic values to Roman Values.This class get the

@@ -1,11 +1,11 @@
-package com.galaxy.service.impl;
+package com.galaxy.now.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import com.galaxy.constant.ConstantValues;
-import com.galaxy.service_pre.Dictionary;
+import com.galaxy.pre.constant.ConstantValues;
+import com.galaxy.pre.service.Dictionary;
 
 public abstract class AbstractIntergalacticConverter<T, R> extends AbstractDataManager<String, List<Object>> {
 	private Dictionary itsDictionary;

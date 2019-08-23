@@ -1,9 +1,9 @@
-package com.galaxy.service_pre;
+package com.galaxy.pre.service;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.galaxy.constant.RomanNumeral;
+import com.galaxy.pre.constant.RomanNumeral;
 
 /**
  * The Dictionary class is a singleton class, This class maintains the assigned
