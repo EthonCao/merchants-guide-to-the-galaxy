@@ -1,4 +1,4 @@
-package com.galaxy.service;
+package com.galaxy.service.pre;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -16,7 +16,7 @@ import com.galaxy.utils.StringUtils;
  * then the value get saved in AssignedValueMap of the {@link Dictionary}.
  */
 public class ParserManager {
-	private Converter itsConvertor;
+	private Converter_pre itsConvertor;
 
 	private Dictionary itsDictionary;
 
@@ -30,7 +30,7 @@ public class ParserManager {
 	}
 
 	private ParserManager() {
-		itsConvertor = new Converter();
+		itsConvertor = new Converter_pre();
 
 		itsDictionary = Dictionary.getInstance();
 	}

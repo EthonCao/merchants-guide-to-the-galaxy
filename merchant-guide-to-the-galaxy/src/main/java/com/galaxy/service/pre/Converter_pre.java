@@ -1,4 +1,4 @@
-package com.galaxy.service;
+package com.galaxy.service.pre;
 
 import java.util.List;
 
@@ -9,8 +9,8 @@ import java.util.List;
  * Roman values to Arabic values using {@link RomanConversion}
  *
  */
-public class Converter {
-	public Converter() {
+public class Converter_pre {
+	public Converter_pre() {
 	}
 
 	public double convertInputValues(String theInput) throws Exception {

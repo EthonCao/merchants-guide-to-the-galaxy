@@ -1,4 +1,4 @@
-package com.galaxy.service;
+package com.galaxy.service.pre;
 
 import java.util.HashMap;
 import java.util.Map;

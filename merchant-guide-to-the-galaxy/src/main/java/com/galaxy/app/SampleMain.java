@@ -1,6 +1,6 @@
 package com.galaxy.app;
 
-import com.galaxy.service.ParserManager;
+import com.galaxy.service.pre.ParserManager;
 
 /**
  * This is the Main Entry Point for this Application. This Class initialize
