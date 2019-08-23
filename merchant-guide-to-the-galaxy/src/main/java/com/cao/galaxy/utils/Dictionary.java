@@ -1,9 +1,9 @@
-package com.galaxy.now.utils;
+package com.cao.galaxy.utils;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.galaxy.now.constant.RomanNumeral;
+import com.cao.galaxy.constant.RomanNumeral;
 
 /**
  * The Dictionary class is a singleton class, This class maintains the assigned

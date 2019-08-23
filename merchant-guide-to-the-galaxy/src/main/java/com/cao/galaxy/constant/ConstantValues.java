@@ -1,4 +1,4 @@
-package com.galaxy.now.constant;
+package com.cao.galaxy.constant;
 
 public enum ConstantValues {
 	

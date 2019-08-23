@@ -1,4 +1,4 @@
-package com.galaxy.pre.constant;
+package com.cao.galaxy.constant;
 
 /**
  * Save to number mapper
@@ -25,4 +25,4 @@ public enum RomanNumeral {
     public int getValue() {
         return itsValue;
     }
-};
+}

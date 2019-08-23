@@ -1,11 +1,11 @@
-package com.galaxy.now.service.impl;
+package com.cao.galaxy.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import com.galaxy.now.constant.ConstantValues;
-import com.galaxy.now.utils.Dictionary;
+import com.cao.galaxy.constant.ConstantValues;
+import com.cao.galaxy.utils.Dictionary;
 
 public class GalaxyDataConverter<T, R> extends AbstractDataManager<String, List<Object>> {
 	private Dictionary itsDictionary;

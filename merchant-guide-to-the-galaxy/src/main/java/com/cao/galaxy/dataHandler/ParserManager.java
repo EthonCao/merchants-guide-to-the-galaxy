@@ -1,4 +1,4 @@
-package com.galaxy.pre.service;
+package com.cao.galaxy.dataHandler;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,9 +6,13 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.galaxy.pre.constant.ConstantValues;
-import com.galaxy.pre.constant.RomanNumeral;
-import com.galaxy.pre.utils.StringUtils;
+import com.cao.galaxy.constant.ConstantValues;
+import com.cao.galaxy.constant.RomanNumeral;
+import com.cao.galaxy.service.AbstractDataConverter;
+import com.cao.galaxy.service.impl.GalaxyDataConverter;
+import com.cao.galaxy.service.impl.RomanDataConverter;
+import com.cao.galaxy.utils.Dictionary;
+import com.cao.galaxy.utils.StringUtils;
 
 /**
  * This class is a singleton class. Parser Manager Manages parsing Inputs. This
@@ -16,8 +20,6 @@ import com.galaxy.pre.utils.StringUtils;
  * then the value get saved in AssignedValueMap of the {@link Dictionary}.
  */
 public class ParserManager {
-	private Converter_pre itsConvertor;
-
 	private Dictionary itsDictionary;
 
 	/**
@@ -30,8 +32,6 @@ public class ParserManager {
 	}
 
 	private ParserManager() {
-		itsConvertor = new Converter_pre();
-
 		itsDictionary = Dictionary.getInstance();
 	}
 
@@ -42,14 +42,14 @@ public class ParserManager {
 	 */
 	public void parseInput() throws Exception {
 		String currentLine;
-		BufferedReader br = null;
+		 BufferedReader br = null;
 		try {
 		    File file = new File(ParserManager.class.getClassLoader().getResource("SampleInput.txt").getFile()); 
 		    br = new BufferedReader(new FileReader(file));
 			while ((currentLine = br.readLine()) != null) {
 				// Get the User Input
 				if (!StringUtils.isEmpty(currentLine)
-						&& currentLine.startsWith(ConstantValues.HOW)) {
+						&& currentLine.startsWith(ConstantValues.HOW.getString())) {
 					parseQuestions(currentLine);
 				} else {
 					parseAssertion(currentLine);
@@ -68,9 +68,9 @@ public class ParserManager {
 	 * @throws Exception
 	 */
 	private void parseQuestions(String theInput) throws Exception {
-		if ((theInput.startsWith(ConstantValues.HOW_MUCH)
-				|| theInput.startsWith(ConstantValues.HOW_MANY))) {
-			double aResult = itsConvertor.convertInputValues(theInput);
+		if ((theInput.startsWith(ConstantValues.HOW_MUCH.getString())
+				|| theInput.startsWith(ConstantValues.HOW_MANY.getString()))) {
+			double aResult = convertInputValues(theInput);
 			if (aResult != -1 && aResult != 0) {
 				System.out.println(aResult);
 			} else {
@@ -79,6 +79,34 @@ public class ParserManager {
 		}
 	}
 
+	public double convertInputValues(String theInput) throws Exception {
+		List<Object> aRomanValueList = getRomanValues(theInput);
+		if (aRomanValueList == null || aRomanValueList.isEmpty()) {
+			return 0;
+		} else {
+			return getResult(aRomanValueList);
+			
+		}
+	}
+	
+	/**
+	 * Converts the Galactic units to Roman values using {@link GalaxyDataConverter}
+	 * @param theInput
+	 * @return
+	 */
+	private List<Object> getRomanValues(String theInput) {
+		return (List<Object>) new GalaxyDataConverter<>().converter(theInput);
+	}
+	
+	/**
+	 * converts the Roman values to Arabic values using {@link RomanDataConverter}
+	 * @param aRomanValueList
+	 * @return
+	 */
+	private double getResult(List<Object> aRomanValueList) {
+		return (double) new RomanDataConverter<>().converter(aRomanValueList);
+	}
+	
 	/**
 	 * Parse Assertion parse the input by splitting the input by " is " first
 	 * and then will split the second part using space and then stored the newly
@@ -87,14 +115,14 @@ public class ParserManager {
 	 */
 	private void parseAssertion(String theInput) {
 		if (!StringUtils.isEmpty(theInput)) {
-			String[] aInputSplits = theInput.split(ConstantValues.IS_VALUE);
+			String[] aInputSplits = theInput.split(ConstantValues.IS_VALUE.getString());
 
 			if (aInputSplits.length > 1
 					&& !StringUtils.isEmpty(aInputSplits[1])) {
-				if (aInputSplits[1].endsWith(ConstantValues.CREDITS)) {
+				if (aInputSplits[1].endsWith(ConstantValues.CREDITS.getString())) {
 					double aFinalCredits = 0;
 					String[] split = aInputSplits[0]
-							.split(ConstantValues.SPACE);
+							.split(ConstantValues.SPACE.getString());
 					String aCreditName = null;
 
 					List<Object> aRomanValueList = new ArrayList<Object>();
@@ -116,14 +144,12 @@ public class ParserManager {
 					}
 
 					String[] aCreditSplit = aInputSplits[1]
-							.split(ConstantValues.SPACE);
+							.split(ConstantValues.SPACE.getString());
 					if (aCreditSplit != null) {
-						RomanConversion aRomanConversion = new RomanConversion();
-
 						// Pass the Roman Values as a List to get the final
 						// Arabic value of the Roman values
-						double anArabicValue = aRomanConversion
-								.convertRomanNumerialToValue(aRomanValueList);
+						AbstractDataConverter<List<Object>, Double> dataConverter = new RomanDataConverter<>();
+						double anArabicValue = (double) dataConverter.converter(aRomanValueList);
 
 						/*
 						 * We take only the First value of the Credit split

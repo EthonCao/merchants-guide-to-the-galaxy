@@ -1,6 +1,6 @@
-package com.galaxy.now.service.impl;
+package com.cao.galaxy.service.impl;
 
-import com.galaxy.now.service.AbstractDataConverter;
+import com.cao.galaxy.service.AbstractDataConverter;
 
 /**
  * 扩展待用

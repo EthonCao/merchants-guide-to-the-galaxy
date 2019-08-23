@@ -1,6 +1,6 @@
-package com.galaxy.now.app;
+package com.cao.galaxy.app;
 
-import com.galaxy.now.dataHandler.ParserManager;
+import com.cao.galaxy.dataHandler.ParserManager;
 
 public class MainApp {
 	public static void main(String[] args) {
