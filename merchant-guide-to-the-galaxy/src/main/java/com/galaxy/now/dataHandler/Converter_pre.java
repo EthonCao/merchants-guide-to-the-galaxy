@@ -1,4 +1,4 @@
-package com.galaxy.now.utils;
+package com.galaxy.now.dataHandler;
 
 import java.util.List;
 

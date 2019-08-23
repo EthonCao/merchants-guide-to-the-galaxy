@@ -1,10 +1,11 @@
-package com.galaxy.now.utils;
+package com.galaxy.now.dataHandler;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
 import com.galaxy.now.constant.ConstantValues;
+import com.galaxy.now.utils.Dictionary;
 
 /**
  * This Class Converts the Galactic values to Roman Values.This class get the

@@ -1,4 +1,4 @@
-package com.galaxy.now.utils;
+package com.galaxy.now.dataHandler;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,6 +8,8 @@ import java.util.List;
 
 import com.galaxy.now.constant.ConstantValues;
 import com.galaxy.now.constant.RomanNumeral;
+import com.galaxy.now.utils.Dictionary;
+import com.galaxy.now.utils.StringUtils;
 
 /**
  * This class is a singleton class. Parser Manager Manages parsing Inputs. This
