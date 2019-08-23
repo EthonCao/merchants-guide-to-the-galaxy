@@ -1,20 +1,21 @@
-package com.cao.galaxy.service.impl;
+package com.cao.interview.merchantsguide2galaxy.service.impl;
 
 import java.util.List;
 
-import com.cao.galaxy.constant.RomanNumeral;
-import com.cao.galaxy.utils.Dictionary;
+import com.cao.interview.merchantsguide2galaxy.constant.RomanNumeral;
+import com.cao.interview.merchantsguide2galaxy.utils.Dictionary;
 
+public class RomanDataConverter<T, R>
+		extends
+			AbstractDataManager<List<Object>, Double> {
 
-public class RomanDataConverter<T, R> extends AbstractDataManager<List<Object>, Double> {
-	 
 	private Dictionary itsDictionary;
 
-	public RomanDataConverter () {
+	public RomanDataConverter() {
 		itsDictionary = Dictionary.getInstance();
 	}
-	
-	 public Double converter(List<Object> aRomanValueList) {
+
+	public Double converter(List<Object> aRomanValueList) {
 		RomanNumeral aTempValue = null;
 
 		double aResult = 0;
@@ -98,8 +99,8 @@ public class RomanDataConverter<T, R> extends AbstractDataManager<List<Object>, 
 		}
 
 		return aResult;
-	 }
-	
+	}
+
 	/**
 	 * This method verify the following logic."I" can be subtracted from "V" and
 	 * "X" only. "X" can be subtracted from "L" and "C" only. "C" can be
@@ -153,7 +154,7 @@ public class RomanDataConverter<T, R> extends AbstractDataManager<List<Object>, 
 		}
 		return true;
 	}
-	
+
 	public RomanNumeral getRomanNumerialValue(String theKey) {
 		return itsDictionary.getRomanNumerialValue(theKey);
 	}

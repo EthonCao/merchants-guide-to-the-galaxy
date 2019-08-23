@@ -1,4 +1,4 @@
-package com.cao.galaxy.dataHandler;
+package com.cao.interview.merchantsguide2galaxy.dataHandler;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,13 +6,13 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.cao.galaxy.constant.ConstantValues;
-import com.cao.galaxy.constant.RomanNumeral;
-import com.cao.galaxy.service.AbstractDataConverter;
-import com.cao.galaxy.service.impl.GalaxyDataConverter;
-import com.cao.galaxy.service.impl.RomanDataConverter;
-import com.cao.galaxy.utils.Dictionary;
-import com.cao.galaxy.utils.StringUtils;
+import com.cao.interview.merchantsguide2galaxy.constant.ConstantValues;
+import com.cao.interview.merchantsguide2galaxy.constant.RomanNumeral;
+import com.cao.interview.merchantsguide2galaxy.service.AbstractDataConverter;
+import com.cao.interview.merchantsguide2galaxy.service.impl.GalaxyDataConverter;
+import com.cao.interview.merchantsguide2galaxy.service.impl.RomanDataConverter;
+import com.cao.interview.merchantsguide2galaxy.utils.Dictionary;
+import com.cao.interview.merchantsguide2galaxy.utils.StringUtils;
 
 /**
  * This class is a singleton class. Parser Manager Manages parsing Inputs. This
@@ -79,7 +79,7 @@ public class ParserManager {
 		}
 	}
 
-	public double convertInputValues(String theInput) throws Exception {
+	private double convertInputValues(String theInput) throws Exception {
 		List<Object> aRomanValueList = getRomanValues(theInput);
 		if (aRomanValueList == null || aRomanValueList.isEmpty()) {
 			return 0;

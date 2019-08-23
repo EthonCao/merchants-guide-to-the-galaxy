@@ -1,9 +1,9 @@
-package com.cao.galaxy.utils;
+package com.cao.interview.merchantsguide2galaxy.utils;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.cao.galaxy.constant.RomanNumeral;
+import com.cao.interview.merchantsguide2galaxy.constant.RomanNumeral;
 
 /**
  * The Dictionary class is a singleton class, This class maintains the assigned

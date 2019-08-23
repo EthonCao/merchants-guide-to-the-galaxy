@@ -1,4 +1,4 @@
-package com.cao.galaxy.utils;
+package com.cao.interview.merchantsguide2galaxy.utils;
 
 /**
  * StringUtils method validate String related logic

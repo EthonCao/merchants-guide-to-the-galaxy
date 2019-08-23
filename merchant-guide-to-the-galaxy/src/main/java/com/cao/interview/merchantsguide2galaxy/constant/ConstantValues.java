@@ -1,4 +1,4 @@
-package com.cao.galaxy.constant;
+package com.cao.interview.merchantsguide2galaxy.constant;
 
 public enum ConstantValues {
 	

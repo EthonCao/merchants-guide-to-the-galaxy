@@ -1,13 +1,15 @@
-package com.cao.galaxy.service.impl;
+package com.cao.interview.merchantsguide2galaxy.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import com.cao.galaxy.constant.ConstantValues;
-import com.cao.galaxy.utils.Dictionary;
+import com.cao.interview.merchantsguide2galaxy.constant.ConstantValues;
+import com.cao.interview.merchantsguide2galaxy.utils.Dictionary;
 
-public class GalaxyDataConverter<T, R> extends AbstractDataManager<String, List<Object>> {
+public class GalaxyDataConverter<T, R>
+		extends
+			AbstractDataManager<String, List<Object>> {
 	private Dictionary itsDictionary;
 
 	public GalaxyDataConverter() {
@@ -24,7 +26,8 @@ public class GalaxyDataConverter<T, R> extends AbstractDataManager<String, List<
 		theInputValue = theInputValue.trim().substring(0,
 				theInputValue.indexOf('?'));
 
-		String[] strings = theInputValue.split(ConstantValues.IS_VALUE.getString());
+		String[] strings = theInputValue
+				.split(ConstantValues.IS_VALUE.getString());
 
 		List<Object> aRomanValues = new ArrayList<Object>();
 

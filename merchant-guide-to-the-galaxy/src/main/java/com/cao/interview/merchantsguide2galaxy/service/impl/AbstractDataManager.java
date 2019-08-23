@@ -1,6 +1,6 @@
-package com.cao.galaxy.service.impl;
+package com.cao.interview.merchantsguide2galaxy.service.impl;
 
-import com.cao.galaxy.service.AbstractDataConverter;
+import com.cao.interview.merchantsguide2galaxy.service.AbstractDataConverter;
 
 /**
  * 扩展待用

@@ -1,6 +1,6 @@
-package com.cao.galaxy.app;
+package com.cao.interview.merchantsguide2galaxy.app;
 
-import com.cao.galaxy.dataHandler.ParserManager;
+import com.cao.interview.merchantsguide2galaxy.dataHandler.ParserManager;
 
 public class MainApp {
 	public static void main(String[] args) {
