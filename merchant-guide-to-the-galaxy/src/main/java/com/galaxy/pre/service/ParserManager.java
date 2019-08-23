@@ -42,9 +42,10 @@ public class ParserManager {
 	 */
 	public void parseInput() throws Exception {
 		String currentLine;
+		BufferedReader br = null;
 		try {
 		    File file = new File(ParserManager.class.getClassLoader().getResource("SampleInput.txt").getFile()); 
-		    BufferedReader br = new BufferedReader(new FileReader(file));
+		    br = new BufferedReader(new FileReader(file));
 			while ((currentLine = br.readLine()) != null) {
 				// Get the User Input
 				if (!StringUtils.isEmpty(currentLine)

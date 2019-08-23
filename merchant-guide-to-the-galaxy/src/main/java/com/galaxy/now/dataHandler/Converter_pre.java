@@ -2,6 +2,10 @@ package com.galaxy.now.dataHandler;
 
 import java.util.List;
 
+import com.galaxy.now.service.AbstractDataConverter;
+import com.galaxy.now.service.impl.GalaxyDataConverter;
+import com.galaxy.now.service.impl.RomanDataConverter;
+
 /**
  * Convert Galaxy values to Arabic
  *  
@@ -11,6 +15,8 @@ import java.util.List;
  * @date 2019年8月23日
  */
 public class Converter_pre {
+	
+	private AbstractDataConverter dataConverter;
 	
 	public Converter_pre() {
 	}
@@ -31,8 +37,10 @@ public class Converter_pre {
 	 * @return
 	 */
 	private List<Object> getRomanValues(String theInput) {
-		IntergalacticConversion anIntergalacticConversion = new IntergalacticConversion();
-		return anIntergalacticConversion.convertIntergalacticToRoman(theInput);
+		/*IntergalacticConversion anIntergalacticConversion = new IntergalacticConversion();
+		return anIntergalacticConversion.convertIntergalacticToRoman(theInput);*/
+		dataConverter = new GalaxyDataConverter<>();
+		return (List<Object>) dataConverter.converter(theInput);
 	}
 	
 	/**
@@ -41,8 +49,10 @@ public class Converter_pre {
 	 * @return
 	 */
 	private double getResult(List<Object> aRomanValueList) {
-		RomanConversion aRomanConvertor = new RomanConversion();
+		/*RomanConversion aRomanConvertor = new RomanConversion();
 		return aRomanConvertor
-				.convertRomanNumerialToValue(aRomanValueList);
+				.convertRomanNumerialToValue(aRomanValueList);*/
+		dataConverter = new RomanDataConverter<>();
+		return (double) dataConverter.converter(aRomanValueList);
 	}
 }

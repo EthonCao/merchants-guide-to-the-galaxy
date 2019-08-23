@@ -5,15 +5,15 @@ import java.util.List;
 import com.galaxy.pre.constant.RomanNumeral;
 import com.galaxy.pre.service.Dictionary;
 
-public abstract class AbstractRomanDataConverter<T, R> extends AbstractDataManager<List<Object>, Double> {
+public class RomanDataConverter<T, R> extends AbstractDataManager<List<Object>, Double> {
 	 
 	private Dictionary itsDictionary;
 
-	public AbstractRomanDataConverter () {
+	public RomanDataConverter () {
 		itsDictionary = Dictionary.getInstance();
 	}
 	
-	 public double compose(List<Object> aRomanValueList) {
+	 public Double converter(List<Object> aRomanValueList) {
 		RomanNumeral aTempValue = null;
 
 		double aResult = 0;

@@ -4,18 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-import com.galaxy.pre.constant.ConstantValues;
-import com.galaxy.pre.service.Dictionary;
+import com.galaxy.now.constant.ConstantValues;
+import com.galaxy.now.utils.Dictionary;
 
-public abstract class AbstractIntergalacticConverter<T, R> extends AbstractDataManager<String, List<Object>> {
+public class GalaxyDataConverter<T, R> extends AbstractDataManager<String, List<Object>> {
 	private Dictionary itsDictionary;
 
-	public AbstractIntergalacticConverter() {
+	public GalaxyDataConverter() {
 		itsDictionary = Dictionary.getInstance();
 	}
 
-	public List<Object> compose(String theInputValue) {
-		if (!theInputValue.contains(ConstantValues.QUESTION_MARK)) {
+	@Override
+	public List<Object> converter(String theInputValue) {
+		if (!theInputValue.contains(ConstantValues.QUESTION_MARK.getString())) {
 			System.out.println(
 					"Invalid Question. ' ?' is missing from question !!");
 		}
@@ -23,7 +24,7 @@ public abstract class AbstractIntergalacticConverter<T, R> extends AbstractDataM
 		theInputValue = theInputValue.trim().substring(0,
 				theInputValue.indexOf('?'));
 
-		String[] strings = theInputValue.split(ConstantValues.IS_VALUE);
+		String[] strings = theInputValue.split(ConstantValues.IS_VALUE.getString());
 
 		List<Object> aRomanValues = new ArrayList<Object>();
 
@@ -33,7 +34,7 @@ public abstract class AbstractIntergalacticConverter<T, R> extends AbstractDataM
 				System.out.println(string + " is ");
 				// Convert to Char Array to check for ConsecutiveNumbers
 				StringTokenizer aTokenizer = new StringTokenizer(string,
-						ConstantValues.SPACE);
+						ConstantValues.SPACE.getString());
 				while (aTokenizer.hasMoreElements()) {
 					String anIntergalacticName = (String) aTokenizer
 							.nextElement();
@@ -108,4 +109,5 @@ public abstract class AbstractIntergalacticConverter<T, R> extends AbstractDataM
 		}
 		return false;
 	}
+
 }

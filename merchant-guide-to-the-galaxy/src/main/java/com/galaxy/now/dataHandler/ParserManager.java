@@ -8,6 +8,8 @@ import java.util.List;
 
 import com.galaxy.now.constant.ConstantValues;
 import com.galaxy.now.constant.RomanNumeral;
+import com.galaxy.now.service.AbstractDataConverter;
+import com.galaxy.now.service.impl.RomanDataConverter;
 import com.galaxy.now.utils.Dictionary;
 import com.galaxy.now.utils.StringUtils;
 
@@ -43,9 +45,10 @@ public class ParserManager {
 	 */
 	public void parseInput() throws Exception {
 		String currentLine;
+		 BufferedReader br = null;
 		try {
 		    File file = new File(ParserManager.class.getClassLoader().getResource("SampleInput.txt").getFile()); 
-		    BufferedReader br = new BufferedReader(new FileReader(file));
+		    br = new BufferedReader(new FileReader(file));
 			while ((currentLine = br.readLine()) != null) {
 				// Get the User Input
 				if (!StringUtils.isEmpty(currentLine)
@@ -118,12 +121,10 @@ public class ParserManager {
 					String[] aCreditSplit = aInputSplits[1]
 							.split(ConstantValues.SPACE.getString());
 					if (aCreditSplit != null) {
-						RomanConversion aRomanConversion = new RomanConversion();
-
 						// Pass the Roman Values as a List to get the final
 						// Arabic value of the Roman values
-						double anArabicValue = aRomanConversion
-								.convertRomanNumerialToValue(aRomanValueList);
+						AbstractDataConverter dataConverter = new RomanDataConverter<>();
+						double anArabicValue = (double) dataConverter.converter(aRomanValueList);
 
 						/*
 						 * We take only the First value of the Credit split
