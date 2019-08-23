@@ -16,8 +16,6 @@ import com.galaxy.now.service.impl.RomanDataConverter;
  */
 public class Converter_pre {
 	
-	private AbstractDataConverter dataConverter;
-	
 	public Converter_pre() {
 	}
 
@@ -39,7 +37,7 @@ public class Converter_pre {
 	private List<Object> getRomanValues(String theInput) {
 		/*IntergalacticConversion anIntergalacticConversion = new IntergalacticConversion();
 		return anIntergalacticConversion.convertIntergalacticToRoman(theInput);*/
-		dataConverter = new GalaxyDataConverter<>();
+		AbstractDataConverter<String, List<Object>> dataConverter = new GalaxyDataConverter<>();
 		return (List<Object>) dataConverter.converter(theInput);
 	}
 	
@@ -52,7 +50,7 @@ public class Converter_pre {
 		/*RomanConversion aRomanConvertor = new RomanConversion();
 		return aRomanConvertor
 				.convertRomanNumerialToValue(aRomanValueList);*/
-		dataConverter = new RomanDataConverter<>();
+		AbstractDataConverter<List<Object>, Double> dataConverter = new RomanDataConverter<>();
 		return (double) dataConverter.converter(aRomanValueList);
 	}
 }

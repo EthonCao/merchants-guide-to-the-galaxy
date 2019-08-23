@@ -123,7 +123,7 @@ public class ParserManager {
 					if (aCreditSplit != null) {
 						// Pass the Roman Values as a List to get the final
 						// Arabic value of the Roman values
-						AbstractDataConverter dataConverter = new RomanDataConverter<>();
+						AbstractDataConverter<List<Object>, Double> dataConverter = new RomanDataConverter<>();
 						double anArabicValue = (double) dataConverter.converter(aRomanValueList);
 
 						/*
