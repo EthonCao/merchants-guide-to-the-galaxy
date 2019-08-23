@@ -9,6 +9,7 @@ import java.util.List;
 import com.galaxy.now.constant.ConstantValues;
 import com.galaxy.now.constant.RomanNumeral;
 import com.galaxy.now.service.AbstractDataConverter;
+import com.galaxy.now.service.impl.GalaxyDataConverter;
 import com.galaxy.now.service.impl.RomanDataConverter;
 import com.galaxy.now.utils.Dictionary;
 import com.galaxy.now.utils.StringUtils;
@@ -19,8 +20,6 @@ import com.galaxy.now.utils.StringUtils;
  * then the value get saved in AssignedValueMap of the {@link Dictionary}.
  */
 public class ParserManager {
-	private Converter_pre itsConvertor;
-
 	private Dictionary itsDictionary;
 
 	/**
@@ -33,8 +32,6 @@ public class ParserManager {
 	}
 
 	private ParserManager() {
-		itsConvertor = new Converter_pre();
-
 		itsDictionary = Dictionary.getInstance();
 	}
 
@@ -73,7 +70,7 @@ public class ParserManager {
 	private void parseQuestions(String theInput) throws Exception {
 		if ((theInput.startsWith(ConstantValues.HOW_MUCH.getString())
 				|| theInput.startsWith(ConstantValues.HOW_MANY.getString()))) {
-			double aResult = itsConvertor.convertInputValues(theInput);
+			double aResult = convertInputValues(theInput);
 			if (aResult != -1 && aResult != 0) {
 				System.out.println(aResult);
 			} else {
@@ -82,6 +79,34 @@ public class ParserManager {
 		}
 	}
 
+	public double convertInputValues(String theInput) throws Exception {
+		List<Object> aRomanValueList = getRomanValues(theInput);
+		if (aRomanValueList == null || aRomanValueList.isEmpty()) {
+			return 0;
+		} else {
+			return getResult(aRomanValueList);
+			
+		}
+	}
+	
+	/**
+	 * Converts the Galactic units to Roman values using {@link GalaxyDataConverter}
+	 * @param theInput
+	 * @return
+	 */
+	private List<Object> getRomanValues(String theInput) {
+		return (List<Object>) new GalaxyDataConverter<>().converter(theInput);
+	}
+	
+	/**
+	 * converts the Roman values to Arabic values using {@link RomanDataConverter}
+	 * @param aRomanValueList
+	 * @return
+	 */
+	private double getResult(List<Object> aRomanValueList) {
+		return (double) new RomanDataConverter<>().converter(aRomanValueList);
+	}
+	
 	/**
 	 * Parse Assertion parse the input by splitting the input by " is " first
 	 * and then will split the second part using space and then stored the newly
