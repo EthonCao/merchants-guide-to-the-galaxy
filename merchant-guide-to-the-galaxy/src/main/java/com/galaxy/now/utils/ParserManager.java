@@ -47,7 +47,7 @@ public class ParserManager {
 			while ((currentLine = br.readLine()) != null) {
 				// Get the User Input
 				if (!StringUtils.isEmpty(currentLine)
-						&& currentLine.startsWith(ConstantValues.HOW)) {
+						&& currentLine.startsWith(ConstantValues.HOW.getString())) {
 					parseQuestions(currentLine);
 				} else {
 					parseAssertion(currentLine);
@@ -66,8 +66,8 @@ public class ParserManager {
 	 * @throws Exception
 	 */
 	private void parseQuestions(String theInput) throws Exception {
-		if ((theInput.startsWith(ConstantValues.HOW_MUCH)
-				|| theInput.startsWith(ConstantValues.HOW_MANY))) {
+		if ((theInput.startsWith(ConstantValues.HOW_MUCH.getString())
+				|| theInput.startsWith(ConstantValues.HOW_MANY.getString()))) {
 			double aResult = itsConvertor.convertInputValues(theInput);
 			if (aResult != -1 && aResult != 0) {
 				System.out.println(aResult);
@@ -85,14 +85,14 @@ public class ParserManager {
 	 */
 	private void parseAssertion(String theInput) {
 		if (!StringUtils.isEmpty(theInput)) {
-			String[] aInputSplits = theInput.split(ConstantValues.IS_VALUE);
+			String[] aInputSplits = theInput.split(ConstantValues.IS_VALUE.getString());
 
 			if (aInputSplits.length > 1
 					&& !StringUtils.isEmpty(aInputSplits[1])) {
-				if (aInputSplits[1].endsWith(ConstantValues.CREDITS)) {
+				if (aInputSplits[1].endsWith(ConstantValues.CREDITS.getString())) {
 					double aFinalCredits = 0;
 					String[] split = aInputSplits[0]
-							.split(ConstantValues.SPACE);
+							.split(ConstantValues.SPACE.getString());
 					String aCreditName = null;
 
 					List<Object> aRomanValueList = new ArrayList<Object>();
@@ -114,7 +114,7 @@ public class ParserManager {
 					}
 
 					String[] aCreditSplit = aInputSplits[1]
-							.split(ConstantValues.SPACE);
+							.split(ConstantValues.SPACE.getString());
 					if (aCreditSplit != null) {
 						RomanConversion aRomanConversion = new RomanConversion();
 
