@@ -40,11 +40,11 @@ public class ParserManager {
 	 * 
 	 * @throws Exception
 	 */
-	public void parseInput() throws Exception {
+	public void parseInput(String filePath) throws Exception {
 		String currentLine;
-		 BufferedReader br = null;
+		BufferedReader br = null;
 		try {
-		    File file = new File(ParserManager.class.getClassLoader().getResource("SampleInput.txt").getFile()); 
+		    File file = new File(ParserManager.class.getClassLoader().getResource(filePath).getFile()); 
 		    br = new BufferedReader(new FileReader(file));
 			while ((currentLine = br.readLine()) != null) {
 				// Get the User Input
