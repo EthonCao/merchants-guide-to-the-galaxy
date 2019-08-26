@@ -6,10 +6,13 @@ import java.util.Map;
 import com.cao.interview.merchantsguide2galaxy.constant.RomanNumeral;
 
 /**
- * The Dictionary class is a singleton class, This class maintains the assigned
- * values in the Assigned value map and the Roman value in the Roman Numerials
+ * Dictionary class
+ * Used to maintains the assigned values in the Assigned value map and the Roman value in the Roman Numerials
  * Map.
- *
+ * <p>Title: Dictionary</p>  
+ * <p>Description: </p>  
+ * @author Cao
+ * @date 2019年8月26日
  */
 public class Dictionary {
 	public Map<String, RomanNumeral> itsRomanNumerialsMap;

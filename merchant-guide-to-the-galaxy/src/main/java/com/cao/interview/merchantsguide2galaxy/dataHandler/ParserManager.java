@@ -15,9 +15,13 @@ import com.cao.interview.merchantsguide2galaxy.utils.Dictionary;
 import com.cao.interview.merchantsguide2galaxy.utils.StringUtils;
 
 /**
- * This class is a singleton class. Parser Manager Manages parsing Inputs. This
- * class check whether input is assertion or questions. If it is assertions,
- * then the value get saved in AssignedValueMap of the {@link Dictionary}.
+ *  Parser Manager to parsing Inputs. 
+ *  Check whether input is assertion or questions. If it is assertions,
+ *  then the value get saved in AssignedValueMap of the {@link Dictionary}. 
+ * <p>Title: ParserManager</p>  
+ * <p>Description: </p>  
+ * @author Cao
+ * @date 2019年8月26日
  */
 public class ParserManager {
 	private Dictionary itsDictionary;

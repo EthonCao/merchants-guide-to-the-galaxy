@@ -1,5 +1,12 @@
 package com.cao.interview.merchantsguide2galaxy.constant;
 
+/**
+ * Key words Mapper
+ * <p>Title: ConstantValues</p>  
+ * <p>Description: </p>  
+ * @author Cao
+ * @date 2019年8月26日
+ */
 public enum ConstantValues {
 	
 	QUESTION_MARK("?"),
