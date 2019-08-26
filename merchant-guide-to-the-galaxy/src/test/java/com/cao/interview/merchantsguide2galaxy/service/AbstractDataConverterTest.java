@@ -21,7 +21,7 @@ public class AbstractDataConverterTest {
 	public void test() {
 		String currentLine;
 		BufferedReader br = null;
-		String fileName = "test.txt";
+		String fileName = "TestData.txt";
 		try {
 			File file = new File(AbstractDataConverterTest.class.getClassLoader().getResource(fileName).getFile()); 
 		    br = new BufferedReader(new FileReader(file));

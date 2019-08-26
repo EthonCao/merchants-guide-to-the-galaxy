@@ -1,60 +1,20 @@
-# Merchant_Guide_Galaxy
-Merchant's Guide to the Galaxy Problem
-Problem One: Merchant's Guide to the Galaxy
+### Homework: Merchant_Guide_Galaxy
 
-You decided to give up on earth after the latest financial collapse left 99.99% of the earth's population with 0.01% of the wealth. Luckily, with the scant sum of money that is left in your account, you are able to afford to rent a spaceship, leave earth, and fly all over the galaxy to sell common metals and dirt (which apparently is worth a lot).
+####### How to Run the Program ####### 
+Run by IDE: 
+1, Import projec to IDE
+2, If the JRE System Library is jdk_1.5 so need upgrade to 1.7 or above
+	eg for Eclipse: 
+	Right click project name -> properties -> Java Compiler -> JDK Compliance -> Compiler compliance level -> 1.8
+3, Open: /merchants-guide-to-the-galaxy/src/main/java/com/cao/interview/merchantsguide2galaxy/app/MainApp.java 
+   Run the MainApp.java then will get the result.
 
-Buying and selling over the galaxy requires you to convert numbers and units, and you decided to write a program to help you.
-
-The numbers used for intergalactic transactions follows similar convention to the roman numerals and you have painstakingly collected the appropriate translation between them.
-
-Roman numerals are based on seven symbols:
-
-Symbol
-
-Value
-
-I
-
-1
-
-V
-
-5
-
-X
-
-10
-
-L
-
-50
-
-C
-
-100
-
-D
-
-500
-
-M
-
-1,000
-
-
-Numbers are formed by combining symbols together and adding the values. For example, MMVI is 1000 + 1000 + 5 + 1 = 2006. Generally, symbols are placed in order of value, starting with the largest values. When smaller values precede larger values, the smaller values are subtracted from the larger values, and the result is added to the total. For example MCMXLIV = 1000 + (1000 − 100) + (50 − 10) + (5 − 1) = 1944.
-
-The symbols "I", "X", "C", and "M" can be repeated three times in succession, but no more. (They may appear four times if the third and fourth are separated by a smaller value, such as XXXIX.) "D", "L", and "V" can never be repeated.
-"I" can be subtracted from "V" and "X" only. "X" can be subtracted from "L" and "C" only. "C" can be subtracted from "D" and "M" only. "V", "L", and "D" can never be subtracted.
-Only one small-value symbol may be subtracted from any large-value symbol.
-A number written in [16]Arabic numerals can be broken into digits. For example, 1903 is composed of 1, 9, 0, and 3. To write the Roman numeral, each of the non-zero digits should be treated separately. Inthe above example, 1,000 = M, 900 = CM, and 3 = III. Therefore, 1903 = MCMIII.
-(Source: Wikipedia ( [17]http://en.wikipedia.org/wiki/Roman_numerals)
-
-Input to your program consists of lines of text detailing your notes on the conversion between intergalactic units and roman numerals.
-
-You are expected to handle invalid queries appropriately.
-
+Run by jar file:
+1, Use below maven command to build the project:
+	*	mvn clean install
+2, Use below command to execute/start the application:
+   *	java -jar ConferenceTrackManagement-0.0.1.jar 
+   
 Test input:
 glob is I
 prok is V
@@ -76,9 +36,31 @@ glob prok Gold is 57800 Credits
 glob prok Iron is 782 Credits
 I have no idea what you are talking about
 
------------------------------------------------------------------------------------------------------------------
-Running the Application:
-Run the SampleMain.java to run the application.
+####### Design #################
 
-Input for the Application:
-Edit the file "SampleInput.txt" to give Inputs.
+#### Main Class: MainApp
+		There is a main() function to represent the schedule as a string.
+
+#### Service Interface (Service layer):
+	
+	1) AbstractDataConverter
+		This interface is to mainly to convert Galaxy values to Roman and convert Roman to Arabic.
+
+#### Value Object (vo layer)	
+    Structure: Test input file -> String -> double -> String
+	
+#### Utility(common function)
+	1) Dictionary 
+		Used to maintains the assigned values in the Assigned value map and the Roman value in the Roman Numerials
+	2) StringUtils
+		Validate String related logic
+
+#### Resource
+	SampleInput.txt
+
+#### Testing(total test case: 2)
+	1) AbstractDataConverterTest
+	2) ParserManagerTest
+	
+	Testing Data
+	TestData.txt
