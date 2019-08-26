@@ -1,4 +1,4 @@
-### Homework: Merchant_Guide_Galaxy
+### Homework: Merchant's Guide to the Galaxy
 
 ####### How to Run the Program ####### 
 Run by IDE: 
